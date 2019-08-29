@@ -1,0 +1,54 @@
+# frozen_string_literal: true
+
+$LOAD_PATH.push File.expand_path("lib", __dir__)
+
+require "quke/demo_app/version"
+
+Gem::Specification.new do |spec|
+  spec.name          = "quke_demo_app"
+  spec.version       = Quke::DemoApp::VERSION
+  spec.authors       = ["Alan Cruikshanks"]
+  spec.email         = ["alan.cruikshanks@gmail.com"]
+  spec.license       = "MIT"
+  spec.homepage      = "https://github.com/Cruikshanks/quke-demo-app"
+  spec.summary       = "A web app used to demo Quke functionality."
+  spec.description   = "A Sinatra web app packaged as a gem that is used to demonstrate https://github/DEFRA/quke"
+
+  spec.files = Dir["{bin,config,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
+  spec.test_files = Dir["spec/**/*"]
+
+  spec.require_paths = ["lib"]
+
+  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
+  # to allow pushing to a single host or delete this section to allow pushing to any host.
+  if spec.respond_to?(:metadata)
+    spec.metadata["allowed_push_host"] = "https://rubygems.org"
+
+    spec.metadata["homepage_uri"] = spec.homepage
+    spec.metadata["source_code_uri"] = "https://github.com/Cruikshanks/quke-demo-app"
+    spec.metadata["changelog_uri"] = "https://github.com/Cruikshanks/quke-demo-app/blob/master/CHANGELOG.md"
+  else
+    raise "RubyGems 2.0 or newer is required to protect against " \
+      "public gem pushes."
+  end
+
+  spec.bindir        = "exe"
+  # spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   = ["quke_demo_app"]
+  spec.default_executable = "quke_demo_app"
+
+  spec.add_development_dependency "defra_ruby_style"
+  # Allows us to automatically generate the change log from the tags, issues,
+  # labels and pull requests on GitHub. Added as a dependency so all dev's have
+  # access to it to generate a log, and so they are using the same version.
+  # New dev's should first create GitHub personal app token and add it to their
+  # ~/.bash_profile (or equivalent)
+  # https://github.com/skywinder/github-changelog-generator#github-token
+  spec.add_development_dependency "github_changelog_generator"
+  # Adds step-by-step debugging and stack navigation capabilities to pry using
+  # byebug
+  spec.add_development_dependency "pry-byebug"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "simplecov"
+end
