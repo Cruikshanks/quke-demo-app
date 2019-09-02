@@ -1,8 +1,4 @@
-# frozen_string_literal: true
-
-# rubocop:disable Layout/LeadingCommentSpace
 #!/usr/bin/env ruby
-# rubocop:enable Layout/LeadingCommentSpace
 
 require "quke"
 
