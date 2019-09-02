@@ -37,6 +37,10 @@ Gem::Specification.new do |spec|
   spec.executables   = ["quke_demo_app"]
   spec.default_executable = "quke_demo_app"
 
+  # Sinatra is a DSL for quickly creating web applications in Ruby with minimal
+  # effort. We've used it for creating our demo website
+  spec.add_dependency "sinatra"
+
   spec.add_development_dependency "defra_ruby_style"
   # Allows us to automatically generate the change log from the tags, issues,
   # labels and pull requests on GitHub. Added as a dependency so all dev's have
@@ -48,6 +52,10 @@ Gem::Specification.new do |spec|
   # Adds step-by-step debugging and stack navigation capabilities to pry using
   # byebug
   spec.add_development_dependency "pry-byebug"
+  # Rack::Test is a small, simple testing API for Rack apps. The sinatra docs
+  # state the need to include it when using rspec to test the app
+  # http://recipes.sinatrarb.com/p/testing/rspec?#label-RSpec
+  spec.add_development_dependency "rack-test"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "simplecov"
