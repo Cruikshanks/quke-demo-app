@@ -6,9 +6,8 @@ require "quke"
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
 
-# (If you use this, don't forget to add pry to your Gemfile!)
-# require "pry"
-# Pry.start
-
-require "irb"
-IRB.start(__FILE__)
+# The default for a gem is to use IRB, but we generally use pry on our projects.
+# We require pry-byebug as that is the gem we have as a dependency rather than
+# just pry.
+require "pry-byebug"
+Pry.start
