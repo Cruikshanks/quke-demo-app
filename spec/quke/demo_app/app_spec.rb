@@ -88,6 +88,32 @@ module Quke
           expect(last_response).to be_ok
         end
       end
+
+      context "/radiobutton" do
+        it "GET displays the page" do
+          get "/radiobutton"
+
+          expect(last_response.body).to include("elements like radio buttons")
+        end
+
+        it "GET returns the status 200" do
+          get "/radiobutton"
+
+          expect(last_response).to be_ok
+        end
+
+        it "POST to the page displays selected option" do
+          post "/radiobutton", "enrollment[organisation_attributes][type]=WasteExemptionsShared::OrganisationType::Partnership"
+
+          expect(last_response.body).to include("You selected <strong>Partnership</strong>")
+        end
+
+        it "POST returns the status 200" do
+          post "/radiobutton", "enrollment[organisation_attributes][type]=WasteExemptionsShared::OrganisationType::Partnership"
+
+          expect(last_response).to be_ok
+        end
+      end
     end
   end
 end
