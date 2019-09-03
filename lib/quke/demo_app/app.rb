@@ -41,6 +41,19 @@ module Quke
         erb :javascript_error
       end
 
+      get "/radiobutton" do
+        @title = "Radio button"
+        erb :radio_button
+      end
+
+      post "/radiobutton" do
+        @title = "Radio button"
+        @selection = params["enrollment"]["organisation_attributes"]["type"]
+        @result = @selection.match(/OrganisationType::([^"]*)/)[1]
+
+        erb :radio_button
+      end
+
       get "/request" do
         @title = "Request details"
         @results = request.env
