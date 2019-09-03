@@ -28,6 +28,11 @@ module Quke
         @title = "Contact"
         erb :contact
       end
+
+      get "/cssselector" do
+        @title = "CSS selector"
+        erb :css_selector
+      end
     end
   end
 end
