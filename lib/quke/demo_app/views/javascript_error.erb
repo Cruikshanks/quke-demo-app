@@ -1,0 +1,19 @@
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <h1><%= @title %></h1>
+      <p class="lead">This page can be used for checking what happens when you test a page with a JavaScript error.</p>
+      <p class="lead">There are examples of how to test against the data in this page, but essentially they are just
+        using <strong>Capybara's</strong> <code>find()</code> method.</p>
+      <ul>
+        <li><code>features/quke/javascript_error.feature</code></li>
+        <li><code>features/step_definitions/quke/javascript_error_steps.rb</code></li>
+        <li><code>quke_demo_app/views/javascript_error.erb</code></li>
+      </ul>
+    </div>
+    <script>
+      throw ({'error':'boom'});
+    </script>
+    <div id="result">
+      <h2>Results</h2>
+      <p><%= @results %></p>
+    </div>
