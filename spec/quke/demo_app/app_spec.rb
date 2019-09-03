@@ -46,6 +46,20 @@ module Quke
           expect(last_response).to be_ok
         end
       end
+
+      context "/cssselector" do
+        it "GET displays the page" do
+          get "/cssselector"
+
+          expect(last_response.body).to include("rely on using CSS selectors to locate elements")
+        end
+
+        it "GET returns the status 200" do
+          get "/cssselector"
+
+          expect(last_response).to be_ok
+        end
+      end
     end
   end
 end
