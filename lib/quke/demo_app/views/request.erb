@@ -1,0 +1,20 @@
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <h1><%= @title %></h1>
+      <p class="lead">This page can be used for checking that the request you formulated in <strong>Quke</strong> is as
+        expected. It will display the details for each item in the request.</p>
+      <p class="lead">There are examples of how to test against the data in this page, but essentially they are just
+        using <strong>Capybara's</strong> <code>find()</code> method.</p>
+      <ul>
+        <li><code>features/quke/request_details.feature</code></li>
+        <li><code>features/step_definitions/quke/request_details_steps.rb</code></li>
+        <li><code>quke_demo_app/views/request_details.erb</code></li>
+      </ul>
+    </div>
+
+    <div id="results">
+      <h2>Results</h2>
+      <% @results.each do | key, value | %>
+        <div><strong><%= key %></strong> <code id="<%= key %>"><%= value %></code></div>
+      <% end %>
+    </div>

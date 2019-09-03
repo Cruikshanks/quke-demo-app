@@ -74,6 +74,20 @@ module Quke
           expect(last_response).to be_ok
         end
       end
+
+      context "/request" do
+        it "GET displays the page" do
+          get "/request"
+
+          expect(last_response.body).to include("checking that the request")
+        end
+
+        it "GET returns the status 200" do
+          get "/request"
+
+          expect(last_response).to be_ok
+        end
+      end
     end
   end
 end

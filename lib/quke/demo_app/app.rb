@@ -40,6 +40,12 @@ module Quke
                    "console. You should see an error!"
         erb :javascript_error
       end
+
+      get "/request" do
+        @title = "Request details"
+        @results = request.env
+        erb :request
+      end
     end
   end
 end
