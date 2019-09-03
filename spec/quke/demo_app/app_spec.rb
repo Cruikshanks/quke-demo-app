@@ -9,7 +9,7 @@ module Quke
         get "/"
 
         expect(last_response).to be_ok
-        expect(last_response.body).to eq("Hello, world!")
+        expect(last_response.body).to include("Welcome to Quke")
       end
     end
   end
