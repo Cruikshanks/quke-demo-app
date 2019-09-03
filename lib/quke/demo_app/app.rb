@@ -15,7 +15,8 @@ module Quke
     class App < Sinatra::Base
 
       get "/" do
-        "Hello, world!"
+        @title = "Welcome to Quke"
+        erb :index
       end
     end
   end
