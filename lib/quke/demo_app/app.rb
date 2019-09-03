@@ -18,6 +18,11 @@ module Quke
         @title = "Welcome to Quke"
         erb :index
       end
+
+      get "/about" do
+        @title = "About"
+        erb :about
+      end
     end
   end
 end
