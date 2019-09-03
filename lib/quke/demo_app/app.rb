@@ -23,6 +23,11 @@ module Quke
         @title = "About"
         erb :about
       end
+
+      get "/contact" do
+        @title = "Contact"
+        erb :contact
+      end
     end
   end
 end
