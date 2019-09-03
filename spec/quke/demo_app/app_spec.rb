@@ -21,13 +21,27 @@ module Quke
 
       context "/about" do
         it "GET displays the page" do
-          get "/"
+          get "/about"
 
-          expect(last_response.body).to include("About")
+          expect(last_response.body).to include("The about page.")
         end
 
         it "GET returns the status 200" do
-          get "/"
+          get "/about"
+
+          expect(last_response).to be_ok
+        end
+      end
+
+      context "/contact" do
+        it "GET displays the page" do
+          get "/contact"
+
+          expect(last_response.body).to include("The contact page.")
+        end
+
+        it "GET returns the status 200" do
+          get "/contact"
 
           expect(last_response).to be_ok
         end
