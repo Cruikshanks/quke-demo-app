@@ -60,6 +60,20 @@ module Quke
           expect(last_response).to be_ok
         end
       end
+
+      context "/jserror" do
+        it "GET displays the page" do
+          get "/jserror"
+
+          expect(last_response.body).to include("page with a JavaScript error")
+        end
+
+        it "GET returns the status 200" do
+          get "/jserror"
+
+          expect(last_response).to be_ok
+        end
+      end
     end
   end
 end

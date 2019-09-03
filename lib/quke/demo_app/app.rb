@@ -33,6 +33,13 @@ module Quke
         @title = "CSS selector"
         erb :css_selector
       end
+
+      get "/jserror" do
+        @title = "JavaScript error"
+        @results = "Open your browser's dev tools, specifically the JavaScript"\
+                   "console. You should see an error!"
+        erb :javascript_error
+      end
     end
   end
 end
