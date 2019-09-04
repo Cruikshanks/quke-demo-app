@@ -13,6 +13,7 @@ require "sinatra/base"
 module Quke
   module DemoApp
     class App < Sinatra::Base
+      include CanHaveSearchResults
 
       get "/" do
         @title = "Welcome to Quke"
@@ -58,6 +59,20 @@ module Quke
         @title = "Request details"
         @results = request.env
         erb :request
+      end
+
+      get "/search" do
+        @title = "Search"
+        erb :search
+      end
+
+      post "/search" do
+        @title = "Search"
+        @query = params["search_input"]
+
+        @results = search_results if @query.casecmp("capybara").zero?
+
+        erb :search
       end
     end
   end

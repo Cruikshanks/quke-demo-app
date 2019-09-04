@@ -5,6 +5,14 @@ require "spec_helper"
 module Quke
   module DemoApp
     RSpec.describe App do
+
+      it "includes CanHaveSearchResults" do
+        included_modules = described_class.ancestors.select { |ancestor| ancestor.instance_of?(Module) }
+
+        expect(included_modules)
+          .to include(Quke::DemoApp::CanHaveSearchResults)
+      end
+
       context "/" do
         it "GET displays the page" do
           get "/"
@@ -110,6 +118,32 @@ module Quke
 
         it "POST returns the status 200" do
           post "/radiobutton", "enrollment[organisation_attributes][type]=WasteExemptionsShared::OrganisationType::Partnership"
+
+          expect(last_response).to be_ok
+        end
+      end
+
+      context "/search" do
+        it "GET displays the page" do
+          get "/search"
+
+          expect(last_response.body).to include("confirming you got the right number of results")
+        end
+
+        it "GET returns the status 200" do
+          get "/search"
+
+          expect(last_response).to be_ok
+        end
+
+        it "POST to the page displays selected option" do
+          post "/search", "search_input=capybara"
+
+          expect(last_response.body).to include("Hydrochoerus hydrochaeris")
+        end
+
+        it "POST returns the status 200" do
+          post "/search", "search_input=capybara"
 
           expect(last_response).to be_ok
         end
