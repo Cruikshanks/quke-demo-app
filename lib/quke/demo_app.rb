@@ -6,5 +6,11 @@ require_relative "demo_app/app"
 module Quke
   module DemoApp
     # The DemoApp namespace
+    class Runner
+      def self.run(_args = [])
+        puts "Hello, you're running your web app from a gem!"
+        Quke::DemoApp::App.run!
+      end
+    end
   end
 end

@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require "quke"
+require_relative "../lib/quke/demo_app"
 
-Quke::Runner.run(ARGV)
+Quke::DemoApp::Runner.run(ARGV)
