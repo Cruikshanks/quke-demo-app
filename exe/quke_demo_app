@@ -1,5 +1,41 @@
 #!/usr/bin/env ruby
 
+# When testing with Aruba we are actually running the gem under a separate
+# process. This means though we are running a test that is exercising our code
+# simplecov doesn't see it.
+#
+# So I managed to come across a way to do this, but essentially it means
+# inserting test code into our normal production app code. Essentially if the
+# env var `COVERAGE` is set we require and let Simplecov know of the details of
+# our process, so it can then record which lines were covered and merge the
+# results with our standard RSpec tests.
+#
+# The issue of working with Aruba and Simplecov in this way is covered here
+# https://github.com/colszowka/simplecov/issues/234
+# The solution details were mainly taken from here
+# https://stackoverflow.com/a/20505441
+if ENV["COVERAGE"]
+  require "simplecov"
+
+  # Each time this process is started we're telling Simplecov about it, and
+  # giving it a unique name so the results don't get overidden. We've tweaked
+  # how we name the process based on https://stackoverflow.com/a/22018887/6117745
+  # We also found that each time RSpec was run Simeplcov was both recording
+  # new results, and merging them in with the results of previous runs. The
+  # tweak we made was to mix the name of our app with the args passed in to give
+  # us something that would still allow for the different tests to be recorded
+  # separately, but also could be matched and overidden on subsequent RSpec
+  # runs.
+  SimpleCov.command_name "quke_demo_app #{ARGV.join(' ')}"
+
+  # Comments taken from original post. It certainly doesnt work without it!
+  # > When running with aruba simplecov was using /tmp/aruba as the root folder.
+  # > This is to force using the project folder
+  SimpleCov.root(File.dirname(__dir__))
+
+  SimpleCov.start
+end
+
 require_relative "../lib/quke/demo_app"
 
-Quke::DemoApp::Runner.run(ARGV)
+Quke::DemoApp::Cli.start

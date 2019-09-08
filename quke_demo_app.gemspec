@@ -33,14 +33,20 @@ Gem::Specification.new do |spec|
   end
 
   spec.bindir        = "exe"
-  # spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.executables   = ["quke_demo_app"]
   spec.default_executable = "quke_demo_app"
 
   # Sinatra is a DSL for quickly creating web applications in Ruby with minimal
   # effort. We've used it for creating our demo website
   spec.add_dependency "sinatra"
+  # Thor is a toolkit for building powerful command-line interfaces.
+  spec.add_dependency "thor"
 
+  # Test command-line applications with Cucumber-Ruby or RSpec
+  spec.add_development_dependency "aruba"
+  # Cucumber is a tool for running automated tests written in plain language.
+  # It works with Aruba in our case to allow us to run tests through the CLI
+  spec.add_development_dependency "cucumber"
   spec.add_development_dependency "defra_ruby_style"
   # Allows us to automatically generate the change log from the tags, issues,
   # labels and pull requests on GitHub. Added as a dependency so all dev's have

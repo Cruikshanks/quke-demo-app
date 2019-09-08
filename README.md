@@ -2,7 +2,7 @@
 
 A Sinatra web app packaged as a gem that is used to demonstrate https://github/DEFRA/quke
 
-## Installation
+## Installating the app
 
 Add this line to your application's Gemfile
 
@@ -20,6 +20,20 @@ Or install it yourself as:
 
 ```shell
 gem install quke-demo-app
+```
+
+## Running the app
+
+Run the app with its default port of **4567** using
+
+```bash
+quke_demo_app
+```
+
+You can change the port used if there is an issue with the default
+
+```bash
+quke_demo_app --port 9876
 ```
 
 ## Development
