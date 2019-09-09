@@ -7,10 +7,10 @@ require "quke/demo_app/version"
 Gem::Specification.new do |spec|
   spec.name          = "quke_demo_app"
   spec.version       = Quke::DemoApp::VERSION
-  spec.authors       = ["Alan Cruikshanks"]
-  spec.email         = ["alan.cruikshanks@gmail.com"]
-  spec.license       = "MIT"
-  spec.homepage      = "https://github.com/Cruikshanks/quke-demo-app"
+  spec.authors       = ["Defra"]
+  spec.email         = ["alan.cruikshanks@environment-agency.gov.uk"]
+  spec.license       = "The Open Government Licence (OGL) Version 3"
+  spec.homepage      = "https://github.com/DEFRA/quke-demo-app"
   spec.summary       = "A web app used to demo Quke functionality."
   spec.description   = "A Sinatra web app packaged as a gem that is used to demonstrate https://github/DEFRA/quke"
 

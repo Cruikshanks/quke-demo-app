@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+# frozen_string_literal: true
+
 # When testing with Aruba we are actually running the gem under a separate
 # process. This means though we are running a test that is exercising our code
 # simplecov doesn't see it.
