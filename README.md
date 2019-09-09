@@ -1,6 +1,13 @@
 # Quke demo app
 
-A Sinatra web app packaged as a gem that is used to demonstrate https://github/DEFRA/quke
+[![Build Status](https://travis-ci.com/DEFRA/quke-demo-app.svg?branch=master)](https://travis-ci.com/DEFRA/quke-demo-app)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d0ca26293d6b7bfd1b8b/maintainability)](https://codeclimate.com/github/DEFRA/quke-demo-app/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d0ca26293d6b7bfd1b8b/test_coverage)](https://codeclimate.com/github/DEFRA/quke-demo-app/test_coverage)
+[![security](https://hakiri.io/github/DEFRA/quke-demo-app/master.svg)](https://hakiri.io/github/DEFRA/quke-demo-app/master)
+[![Gem Version](https://badge.fury.io/rb/quke_demo_app.svg)](https://badge.fury.io/rb/quke_demo_app)
+[![Licence](https://img.shields.io/badge/Licence-OGLv3-blue.svg)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3)
+
+A Sinatra web app packaged as a gem that is used to demonstrate <https://github/DEFRA/quke>
 
 ## Installating the app
 
@@ -10,13 +17,7 @@ Add this line to your application's Gemfile
 gem 'quke_demo_app'
 ```
 
-And then execute:
-
-```shell
-bundle
-```
-
-Or install it yourself as:
+Or install it yourself as
 
 ```shell
 gem install quke-demo-app
@@ -44,12 +45,24 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
-## Contributing
+## Contributing to this project
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/Cruikshanks/quke-demo-app.
+If you have an idea you'd like to contribute please log an issue.
+
+All contributions should be submitted via a pull request.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+THIS INFORMATION IS LICENSED UNDER THE CONDITIONS OF THE OPEN GOVERNMENT LICENCE found at:
 
-> If you don't add a license it's neither free or open!
+<http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3>
+
+The following attribution statement MUST be cited in your products and applications when using this information.
+
+> Contains public sector information licensed under the Open Government license v3
+
+### About the license
+
+The Open Government Licence (OGL) was developed by the Controller of Her Majesty's Stationery Office (HMSO) to enable information providers in the public sector to license the use and re-use of their information under a common open licence.
+
+It is designed to encourage use and re-use of information freely and flexibly, with only a few conditions.
