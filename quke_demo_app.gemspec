@@ -38,7 +38,7 @@ Gem::Specification.new do |spec|
 
   # Sinatra is a DSL for quickly creating web applications in Ruby with minimal
   # effort. We've used it for creating our demo website
-  spec.add_dependency "sinatra"
+  spec.add_dependency "sinatra", "~> 2.0.2"
   # Thor is a toolkit for building powerful command-line interfaces.
   spec.add_dependency "thor"
 
