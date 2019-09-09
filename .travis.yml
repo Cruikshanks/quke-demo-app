@@ -1,34 +1,34 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=d6ed9ffedf497bc2107866f279b5b89536a4096b3e3fa5432b7fdb8a027da0c3
+  - CC_TEST_REPORTER_ID=d6ed9ffedf497bc2107866f279b5b89536a4096b3e3fa5432b7fdb8a027da0c3
 
 language: ruby
 rvm: 2.4.2
 cache: bundler
 
-# Travis CI clones repositories to a depth of 50 commits, which is only really
-# useful if you are performing git operations.
-# https://docs.travis-ci.com/user/customizing-the-build/#Git-Clone-Depth
 git:
   depth: 3
 
 before_install:
-  - export TZ=UTC
-  - gem install -v 1.17.2 bundler --no-rdoc --no-ri
+- export TZ=UTC
+- gem install -v 1.17.2 bundler --no-rdoc --no-ri
 
 before_script:
-  # Setup to support the CodeClimate test coverage submission
-  # As per CodeClimate's documentation, they suggest only running
-  # ./cc-test-reporter commands on travis-ci push builds only. Hence we wrap all
-  # the codeclimate test coverage related commands in a check that tests if we
-  # are in a pull request or not.
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter; fi
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then chmod +x ./cc-test-reporter; fi
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter before-build; fi
-  # Run rubocop. It's installed as a dependency (hence no install step) as this
-  # allows projects to control the version they are using (rather than getting)
-  # surprise build failures.
-  - bundle exec rubocop
-
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter; fi
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then chmod +x ./cc-test-reporter; fi
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter before-build;
+  fi
+- bundle exec rubocop
 after_script:
-  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code
+  $TRAVIS_TEST_RESULT; fi
+
+deploy:
+  provider: rubygems
+  api_key:
+    secure: YLkxGwaFr5rx0UEkQNsCfn+h+R3IM3zIR6/PBFRYHpxgjfDD3z1ThPTQgS3MuFsim4OhlOhCSHGh7Qs1EQNqV1yFot/WNmowSHNPpA2+n9BzzEoTOjJt719KKeIzQXUqB8nxEMzE0ICJf9dZaiM+jo88adSa6JWNIBKt8CGvGQ63o6PzJniXF2RIjYD4BwVckZoUtzGUowfhQlA92X7/zkqcxwzgoKZpJ/p1kz5FZUaiMiZ8cuNIAbwmOmu1dmvVivuVhHjldi5U1Gf09qim1wyJM4+O9kWgcC3oRzyWLJU/T4C3O1bynwdK6qNHuZnLEtJwUipgcrlStB02/YtTBrO1dm6XoJm4acVY6x3FUD5P2DCFnY/khgKyyFIgjOMzjcVNPoVRASGY3j52mqpFtH1l03uMKS4EX1zgRAJt3Zh+EFN+64MICtZWRstbqntAxyk7NcoLiW5OffOYz9aLcnhAatLI2yIzYy47NttHy+YjjmTdKuzTATON0B39yQKstlIoPhk75ZmPCf1FoHXnAGjr/MiHDj9KL+Hiz3umP3jY4+Jd36+61rkrIlAFVWRWn+I98RXCruEZVr78pE/3myK12vh88H14wMQuI/h/ZJF2EwghPhFjCQl/vK8dgJZZPWSLTX+yWlyIMKMohtucggRRKzNhBm4mQ4kPAZrds0c=
+  gem: quke_demo_app
+  on:
+    tags: true
+    repo: DEFRA/quke-demo-app
