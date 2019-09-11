@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.2.0](https://github.com/DEFRA/quke-demo-app/tree/v0.2.0) (2019-09-11)
+[Full Changelog](https://github.com/DEFRA/quke-demo-app/compare/v0.1.1...v0.2.0)
+
+**Merged pull requests:**
+
+- Refactor the namespaces [\#16](https://github.com/DEFRA/quke-demo-app/pull/16) ([Cruikshanks](https://github.com/Cruikshanks))
+
 ## [v0.1.1](https://github.com/DEFRA/quke-demo-app/tree/v0.1.1) (2019-09-09)
 [Full Changelog](https://github.com/DEFRA/quke-demo-app/compare/v0.1.0...v0.1.1)
 
