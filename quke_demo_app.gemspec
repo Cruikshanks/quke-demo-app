@@ -2,11 +2,11 @@
 
 $LOAD_PATH.push File.expand_path("lib", __dir__)
 
-require "quke/demo_app/version"
+require "quke_demo_app/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "quke_demo_app"
-  spec.version       = Quke::DemoApp::VERSION
+  spec.version       = QukeDemoApp::VERSION
   spec.authors       = ["Defra"]
   spec.email         = ["alan.cruikshanks@environment-agency.gov.uk"]
   spec.license       = "The Open Government Licence (OGL) Version 3"
