@@ -2,11 +2,11 @@
 
 require "spec_helper"
 
-RSpec.describe Quke::DemoApp do
+RSpec.describe QukeDemoApp do
   describe "VERSION" do
     it "is a version string in the correct format" do
-      expect(Quke::DemoApp::VERSION).to be_a(String)
-      expect(Quke::DemoApp::VERSION).to match(/\d+\.\d+\.\d+/)
+      expect(QukeDemoApp::VERSION).to be_a(String)
+      expect(QukeDemoApp::VERSION).to match(/\d+\.\d+\.\d+/)
     end
   end
 end
