@@ -34,7 +34,6 @@ Gem::Specification.new do |spec|
 
   spec.bindir        = "exe"
   spec.executables   = ["quke_demo_app"]
-  spec.default_executable = "quke_demo_app"
 
   # Sinatra is a DSL for quickly creating web applications in Ruby with minimal
   # effort. We've used it for creating our demo website
