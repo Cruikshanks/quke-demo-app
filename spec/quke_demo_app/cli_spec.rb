@@ -16,7 +16,7 @@ module QukeDemoApp
         # set_environment_variable() is a method provided by Aruba, as is
         # run_command
         set_environment_variable("COVERAGE", "true")
-        run_command("exe/quke_demo_app #{port_args}")
+        run_command("quke_demo_app #{port_args}")
       end
 
       it { expect(last_command_started).to be_successfully_executed }
