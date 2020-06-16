@@ -1,8 +1,8 @@
 # Quke demo app
 
 [![Build Status](https://travis-ci.com/DEFRA/quke-demo-app.svg?branch=master)](https://travis-ci.com/DEFRA/quke-demo-app)
-[![Maintainability](https://api.codeclimate.com/v1/badges/d0ca26293d6b7bfd1b8b/maintainability)](https://codeclimate.com/github/DEFRA/quke-demo-app/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/d0ca26293d6b7bfd1b8b/test_coverage)](https://codeclimate.com/github/DEFRA/quke-demo-app/test_coverage)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_quke-demo-app&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=DEFRA_quke-demo-app)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_quke-demo-app&metric=coverage)](https://sonarcloud.io/dashboard?id=DEFRA_quke-demo-app)
 [![security](https://hakiri.io/github/DEFRA/quke-demo-app/master.svg)](https://hakiri.io/github/DEFRA/quke-demo-app/master)
 [![Gem Version](https://badge.fury.io/rb/quke_demo_app.svg)](https://badge.fury.io/rb/quke_demo_app)
 [![Licence](https://img.shields.io/badge/Licence-OGLv3-blue.svg)](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3)
