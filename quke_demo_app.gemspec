@@ -32,6 +32,8 @@ Gem::Specification.new do |spec|
       "public gem pushes."
   end
 
+  spec.required_ruby_version = ">= 2.4"
+
   spec.bindir        = "exe"
   spec.executables   = ["quke_demo_app"]
 
