@@ -1,6 +1,6 @@
 # Quke demo app
 
-[![Build Status](https://travis-ci.com/DEFRA/quke-demo-app.svg?branch=main)](https://travis-ci.com/DEFRA/quke-demo-app)
+![Build Status](https://github.com/DEFRA/quke-demo-app/workflows/CI/badge.svg?branch=main)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_quke-demo-app&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=DEFRA_quke-demo-app)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=DEFRA_quke-demo-app&metric=coverage)](https://sonarcloud.io/dashboard?id=DEFRA_quke-demo-app)
 [![security](https://hakiri.io/github/DEFRA/quke-demo-app/main.svg)](https://hakiri.io/github/DEFRA/quke-demo-app/main)
